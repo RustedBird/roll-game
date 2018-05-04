@@ -15,7 +15,6 @@ scores = [0, 0];
 activePlayer = 0;
 
 dice = Math.floor(Math.random() * 6 + 1);
-console.log(dice);
 
 document.querySelector('#current-' + activePlayer).textContent = 0;
 
@@ -33,15 +32,15 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
         document.querySelector('.dice').setAttribute('src', 'dice-' + dice + '.png');
         document.querySelector('#current-' + activePlayer).textContent = Number.parseInt(document.querySelector('#current-' + activePlayer).textContent) + dice + 'x' + multi.toFixed(1);
         roll++;
+        console.log(roll);
+        console.log(multi);
         if (roll <= 3) {
             multi += 0.1;
-        } else if (3 < roll <= 4 ) {
+        } else if (roll <= 5 ) {
             multi += 0.5;
-        } else if (roll > 4) {
+        } else if (5 < roll) {
             multi += 1;
         }
-
-        console.log(multi);
     } else {
         document.querySelector('.dice').style.display = 'block';
         document.querySelector('.dice').setAttribute('src', 'dice-' + dice + '.png');
@@ -59,6 +58,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
 });
 document.querySelector('.btn-hold').addEventListener('click', function () {
     scores[activePlayer] += Math.round(Number.parseInt(document.querySelector('#current-' + activePlayer).textContent) * multi);
+    roll = 1;
     multi = 1;
      document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
     if (scores[activePlayer] >= 500) {
