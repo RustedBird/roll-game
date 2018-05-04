@@ -47,6 +47,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
         document.querySelector('.dice').setAttribute('src', 'dice-' + dice + '.png');
         document.querySelector('#current-' + activePlayer).textContent = 0;
         document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+        roll = 1;
         multi = 1;
         if (activePlayer === 0) {
             activePlayer = 1;
@@ -81,6 +82,7 @@ document.querySelector('.btn-new').addEventListener('click', function () {
     document.querySelector('#current-0').textContent = 0;
     document.querySelector('#current-1').textContent = 0;
     document.querySelector('.dice').style.display = 'none';
+    roll = 1;
     multi = 1;
     scores = [0, 0];
     activePlayer = 0;
