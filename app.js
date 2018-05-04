@@ -59,6 +59,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
 });
 document.querySelector('.btn-hold').addEventListener('click', function () {
     scores[activePlayer] += Math.round(Number.parseInt(document.querySelector('#current-' + activePlayer).textContent) * multi);
+    roll = 1;
     multi = 1;
      document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
     if (scores[activePlayer] >= 500) {
