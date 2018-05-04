@@ -80,6 +80,7 @@ document.querySelector('.btn-new').addEventListener('click', function () {
     document.querySelector('#score-1').textContent = 0;
     document.querySelector('#current-0').textContent = 0;
     document.querySelector('#current-1').textContent = 0;
+    document.querySelector('.dice').style.display = 'none';
     multi = 1;
     scores = [0, 0];
     activePlayer = 0;
